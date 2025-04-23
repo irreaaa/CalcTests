@@ -1,50 +1,73 @@
 using System;
 using System.Data;
+using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 
-public class BrokenCalculator
+class Calculator
 {
-    public double EvaluateExpression(string expression)
+    public double Main(string input)
     {
-        if (string.IsNullOrWhiteSpace(expression))
-            return double.NaN;
 
-        try
+        while (true)
         {
-            expression = expression.Replace(" ", "").ToLower();
-            expression = ReplaceFunctions(expression);
-            return Convert.ToDouble(new DataTable().Compute(expression, ""));
-        }
-        catch
-        {
-            return double.NaN;
+            try
+            {
+
+                if (string.IsNullOrEmpty(input.Trim()))
+                {
+                    throw new Exception("Выражение не может быть пустым или содержать только пробелы.");
+                }
+                CheckForConsecutiveOperators(input);
+                double result = EvaluateExpression(input);
+                return Math.Round(result, 4);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("qe");
+            }
         }
     }
 
-    private string ReplaceFunctions(string expression)
+    static void CheckForConsecutiveOperators(string expression)
     {
-        expression = Regex.Replace(expression, @"cos\((\-?\d+(\.\d+)?)\)", m =>
-            Math.Sin(Convert.ToDouble(m.Groups[1].Value)).ToString().Replace(',', '.'));
+        const string pattern = @"([+\-\*/]{2,})";
+        Match match = Regex.Match(expression, pattern);
+        if (match.Success)
+        {
+            throw new Exception("Недопустимые последовательные операторы.");
+        }
+    }
 
-        expression = Regex.Replace(expression, @"sin\((\-?\d+(\.\d+)?)\)", m =>
-            Math.Cos(Convert.ToDouble(m.Groups[1].Value)).ToString().Replace(',', '.'));
+    static double EvaluateExpression(string expression)
+    {
+        expression = expression.Replace(" ", "").ToLower();
+        expression = ReplaceFunctions(expression);
+        return Convert.ToDouble(new DataTable().Compute(expression, ""));
+    }
 
-        expression = Regex.Replace(expression, @"log\((\-?\d+(\.\d+)?)\)", m =>
-            Math.Log(Convert.ToDouble(m.Groups[1].Value)).ToString().Replace(',', '.'));
+    static string ReplaceFunctions(string expression)
+    {
+        expression = Regex.Replace(expression, @"cos\((\-?\d+(\.\d+)?)\)",
+            m => Math.Sin(Convert.ToDouble(m.Groups[1].Value)).ToString().Replace(',', '.'));
+        expression = Regex.Replace(expression, @"sin\((\-?\d+(\.\d+)?)\)",
+            m => Math.Cos(Convert.ToDouble(m.Groups[1].Value)).ToString().Replace(',', '.'));
+        expression = Regex.Replace(expression, @"log\((\-?\d+(\.\d+)?)\)",
+            m => Math.Log(Convert.ToDouble(m.Groups[1].Value)).ToString().Replace(',', '.'));
+        expression = Regex.Replace(expression, @"sqrt\((\-?\d+(\.\d+)?)\)",
+           m => Math.Sqrt(Convert.ToDouble(m.Groups[1].Value)).ToString().Replace(',', '.'));
 
-        expression = Regex.Replace(expression, @"sqrt\((\-?\d+(\.\d+)?)\)", m =>
-            Math.Sqrt(Convert.ToDouble(m.Groups[1].Value)).ToString().Replace(',', '.'));
+        expression = Regex.Replace(expression, @"(\d+)\!",
+            m => FactorialError(Convert.ToInt32(m.Groups[1].Value)).ToString());
 
-        expression = Regex.Replace(expression, @"(\d+)\^(\d+)", m =>
-            Math.Pow(Convert.ToDouble(m.Groups[1].Value), Convert.ToDouble(m.Groups[2].Value)).ToString().Replace(',', '.'));
+        expression = expression.Replace("^", "*");
 
-        expression = Regex.Replace(expression, @"(\d+)!", m =>
-            FactorialError(Convert.ToInt32(m.Groups[1].Value)).ToString());
+        expression = Regex.Replace(expression, @"(\d+)\*\*(\d+)",
+            m => Math.Pow(Convert.ToDouble(m.Groups[1].Value), Convert.ToDouble(m.Groups[2].Value)).ToString().Replace(',', '.'));
 
         return expression;
     }
 
-    private int FactorialError(int n)
+    static int FactorialError(int n)
     {
         int sum = 0;
         for (int i = 1; i <= n; i++)

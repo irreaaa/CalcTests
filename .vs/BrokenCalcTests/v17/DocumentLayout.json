@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\irisp\\source\\repos\\BrokenCalcTests\\",
+  "WorkspaceRootPath": "C:\\Users\\blockchain\\source\\repos\\CalcTests\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C3FD54D-1EE6-471A-AA45-7B58D2081C95}|BrokenCalcTests\\BrokenCalcTests.csproj|c:\\users\\irisp\\source\\repos\\brokencalctests\\brokencalctests\\calculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C3FD54D-1EE6-471A-AA45-7B58D2081C95}|BrokenCalcTests\\BrokenCalcTests.csproj|solutionrelative:brokencalctests\\calculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C3FD54D-1EE6-471A-AA45-7B58D2081C95}|BrokenCalcTests\\BrokenCalcTests.csproj|c:\\users\\blockchain\\source\\repos\\calctests\\brokencalctests\\calctests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C3FD54D-1EE6-471A-AA45-7B58D2081C95}|BrokenCalcTests\\BrokenCalcTests.csproj|solutionrelative:brokencalctests\\calctests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C3FD54D-1EE6-471A-AA45-7B58D2081C95}|BrokenCalcTests\\BrokenCalcTests.csproj|c:\\users\\irisp\\source\\repos\\brokencalctests\\brokencalctests\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C3FD54D-1EE6-471A-AA45-7B58D2081C95}|BrokenCalcTests\\BrokenCalcTests.csproj|solutionrelative:brokencalctests\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3C3FD54D-1EE6-471A-AA45-7B58D2081C95}|BrokenCalcTests\\BrokenCalcTests.csproj|c:\\users\\blockchain\\source\\repos\\calctests\\brokencalctests\\calc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3C3FD54D-1EE6-471A-AA45-7B58D2081C95}|BrokenCalcTests\\BrokenCalcTests.csproj|solutionrelative:brokencalctests\\calc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,27 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CalculatorTests.cs",
-              "DocumentMoniker": "C:\\Users\\irisp\\source\\repos\\BrokenCalcTests\\BrokenCalcTests\\CalculatorTests.cs",
-              "RelativeDocumentMoniker": "BrokenCalcTests\\CalculatorTests.cs",
-              "ToolTip": "C:\\Users\\irisp\\source\\repos\\BrokenCalcTests\\BrokenCalcTests\\CalculatorTests.cs",
-              "RelativeToolTip": "BrokenCalcTests\\CalculatorTests.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAwwEwAAAAKAAAAAAAAAA==",
+              "Title": "CalcTests.cs",
+              "DocumentMoniker": "C:\\Users\\blockchain\\source\\repos\\CalcTests\\BrokenCalcTests\\CalcTests.cs",
+              "RelativeDocumentMoniker": "BrokenCalcTests\\CalcTests.cs",
+              "ToolTip": "C:\\Users\\blockchain\\source\\repos\\CalcTests\\BrokenCalcTests\\CalcTests.cs",
+              "RelativeToolTip": "BrokenCalcTests\\CalcTests.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAA3wK0AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T11:46:03.227Z",
+              "WhenOpened": "2025-04-23T07:53:18.628Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\irisp\\source\\repos\\BrokenCalcTests\\BrokenCalcTests\\Program.cs",
-              "RelativeDocumentMoniker": "BrokenCalcTests\\Program.cs",
-              "ToolTip": "C:\\Users\\irisp\\source\\repos\\BrokenCalcTests\\BrokenCalcTests\\Program.cs",
-              "RelativeToolTip": "BrokenCalcTests\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAUAAAAAAAAAA==",
+              "Title": "Calc.cs",
+              "DocumentMoniker": "C:\\Users\\blockchain\\source\\repos\\CalcTests\\BrokenCalcTests\\Calc.cs",
+              "RelativeDocumentMoniker": "BrokenCalcTests\\Calc.cs",
+              "ToolTip": "C:\\Users\\blockchain\\source\\repos\\CalcTests\\BrokenCalcTests\\Calc.cs",
+              "RelativeToolTip": "BrokenCalcTests\\Calc.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwCwAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T11:38:41.676Z",
+              "WhenOpened": "2025-04-23T06:30:07.355Z",
               "EditorCaption": ""
             }
           ]
