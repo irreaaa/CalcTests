@@ -48,9 +48,9 @@ public class ProgramTests
     }
 
     [Test]
-    public void Calculate_SimpleAdditionBigNumWithPoint_ReturnsError()
+    public void Calculate_SimpleAdditionBigNumWithPoint_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("42342,4352+23,3"));
+        Assert.Throws<Exception>(() => _calculator.Main("42342,4352+23,3"));
     }
 
     [Test]
@@ -103,9 +103,9 @@ public class ProgramTests
     }
 
     [Test]
-    public void Calculate_SubtractionBigNumWithPoint_ReturnsError()
+    public void Calculate_SubtractionBigNumWithPoint_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("42342,4352-23,3"));
+        Assert.Throws<Exception>(() => _calculator.Main("42342,4352-23,3"));
     }
 
     [Test]
@@ -228,15 +228,15 @@ public class ProgramTests
     }
 
     [Test]
-    public void Calculate_SqrtDouble_ReturnsError()
+    public void Calculate_SqrtDouble_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("sqrt(0,027)"));
+        Assert.Throws<Exception>(() => _calculator.Main("sqrt(0,027)"));
     }
 
     [Test]
-    public void Calculate_SqrtNegative_ReturnsError()
+    public void Calculate_SqrtNegative_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("sqrt(-4)"));
+        Assert.Throws<Exception>(() => _calculator.Main("sqrt(-4)"));
     }
 
     [Test]
@@ -289,9 +289,9 @@ public class ProgramTests
     }
 
     [Test]
-    public void Calculate_SqrtFactorialPoint_ReturnsError()
+    public void Calculate_SqrtFactorialPoint_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("5,5!"));
+        Assert.Throws<Exception>(() => _calculator.Main("5,5!"));
     }
 
     [Test]
@@ -316,22 +316,43 @@ public class ProgramTests
     }
 
     [Test]
-    public void Calculate_LogNegative_ReturnsError()
+    public void Calculate_LogNegative_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("log(-3)"));
+        Assert.Throws<Exception>(() => _calculator.Main("log(-3)"));
     }
 
     [Test]
-    public void Calculate_LogDouble_ReturnsError()
+    public void Calculate_LogDouble_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("log(10.10)"));
+        Assert.Throws<Exception>(() => _calculator.Main("log(10.10)"));
     }
 
     [Test]
-    public void Calculate_ComplexBrokenExpression_ReturnsCorrectlyBrokenResult()
+    public void Calculate_ComplexBrokenExpression_ReturnsCorrectResult()
+    {
+        var result = _calculator.Main("25-(72-71)");
+        Assert.AreEqual(24, result);
+    }
+
+    [Test]
+    public void Calculate_ComplexBrokenExpression1_ReturnsCorrectlyBrokenResult()
+    {
+        var result = _calculator.Main("25^13-21");
+        Assert.AreEqual(304, result);
+    }
+
+    [Test]
+    public void Calculate_ComplexBrokenExpression2_ReturnsCorrectlyBrokenResult()
     {
         var result = _calculator.Main("2+cos(0)+sin(0)+5!");
         Assert.AreEqual(2 + 0 + 1 + 15, result);
+    }
+
+    [Test]
+    public void Calculate_ComplexBrokenExpression3_ReturnsCorrectlyBrokenResult()
+    {
+        var result = _calculator.Main("cos(1)+31^2-log(10)/70-(25+13)");
+        Assert.AreEqual(24.8086, result, 0.0001);
     }
 
     [Test]
@@ -393,60 +414,72 @@ public class ProgramTests
     [Test]
     public void Calculate_SimpleAdditionFDoubleNum_ReturnsCorrectResult()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("45,63562+334,6347457"));
+        Assert.Throws<Exception>(() => _calculator.Main("45,63562+334,6347457"));
     }
 
     [Test]
-    public void Calculate_EmptyExpression_ReturnsError()
+    public void Calculate_EmptyExpression_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main(""));
+        Assert.Throws<Exception>(() => _calculator.Main(""));
     }
 
     [Test]
-    public void Calculate_InvalidExpressionLetters_ReturnsError()
+    public void Calculate_InvalidExpressionLetters_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("abc+1"));
+        Assert.Throws<Exception>(() => _calculator.Main("abc+1"));
     }
 
     [Test]
-    public void Calculate_e_ReturnsError()
+    public void Calculate_e_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("abc+1"));
+        Assert.Throws<Exception>(() => _calculator.Main("abc+1"));
     }
 
     [Test]
-    public void Calculate_InvalidMathFunction_ReturnsError()
+    public void Calculate_InvalidMathFunction_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("exp(2)"));
+        Assert.Throws<Exception>(() => _calculator.Main("exp(2)"));
     }
 
     [Test]
-    public void Calculate_BrokenBrackets_ReturnsError()
+    public void Calculate_BrokenBrackets_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("(2+3]"));
+        Assert.Throws<Exception>(() => _calculator.Main("(2+3]"));
     }
 
     [Test]
-    public void Calculate_UnclosedBrackets_ReturnsError()
+    public void Calculate_UnclosedBrackets_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("(2+3"));
+        Assert.Throws<Exception>(() => _calculator.Main("(2+3"));
     }
 
     [Test]
-    public void Calculate_ExtraOperator_ReturnsError()
+    public void Calculate_ExtraOperator_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("2++3"));
+        Assert.Throws<Exception>(() => _calculator.Main("2++3"));
     }
 
     [Test]
-    public void Calculate_EmptyBrackets_ReturnsError()
+    public void Calculate_ExtraOperatorBeforeExpression_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("()"));
+        Assert.Throws<Exception>(() => _calculator.Main("+-12+3"));
     }
 
     [Test]
-    public void Calculate_OnlyOperator_ReturnsError()
+    public void Calculate_ExtraOperatorAtTheEnd_ReturnsException()
     {
-        Assert.Throws(typeof(Exception), () => _calculator.Main("+"));
+        Assert.Throws<Exception>(() => _calculator.Main("12-1+"));
+    }
+
+    [Test]
+    public void Calculate_EmptyBrackets_ReturnsException()
+    {
+        Assert.Throws<Exception>(() => _calculator.Main("()"));
+    }
+
+    [Test]
+    public void Calculate_OnlyOperator_ReturnsException()
+    {
+        Assert.Throws<Exception>(() => _calculator.Main("+"));
     }
 }
