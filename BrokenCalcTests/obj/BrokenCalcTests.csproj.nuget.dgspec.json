@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\blockchain\\source\\repos\\CalcTests\\BrokenCalcTests\\BrokenCalcTests.csproj": {}
+    "C:\\Users\\blockchain\\Source\\Repos\\CalcTests\\BrokenCalcTests\\BrokenCalcTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\blockchain\\source\\repos\\CalcTests\\BrokenCalcTests\\BrokenCalcTests.csproj": {
+    "C:\\Users\\blockchain\\Source\\Repos\\CalcTests\\BrokenCalcTests\\BrokenCalcTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\blockchain\\source\\repos\\CalcTests\\BrokenCalcTests\\BrokenCalcTests.csproj",
+        "projectUniqueName": "C:\\Users\\blockchain\\Source\\Repos\\CalcTests\\BrokenCalcTests\\BrokenCalcTests.csproj",
         "projectName": "BrokenCalcTests",
-        "projectPath": "C:\\Users\\blockchain\\source\\repos\\CalcTests\\BrokenCalcTests\\BrokenCalcTests.csproj",
+        "projectPath": "C:\\Users\\blockchain\\Source\\Repos\\CalcTests\\BrokenCalcTests\\BrokenCalcTests.csproj",
         "packagesPath": "C:\\Users\\blockchain\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\blockchain\\Source\\Repos\\CalcTests\\BrokenCalcTests\\obj\\",
         "projectStyle": "PackageReference",

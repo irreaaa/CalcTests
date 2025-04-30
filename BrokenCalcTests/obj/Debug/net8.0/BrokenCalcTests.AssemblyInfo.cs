@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BrokenCalcTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+333ff0427d5066708ee9fe0a35d0a1afcbf48ddd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+127ffaa7ebc1a359d69c5e5017418c4fc1414968")]
 [assembly: System.Reflection.AssemblyProductAttribute("BrokenCalcTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BrokenCalcTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
